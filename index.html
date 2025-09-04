@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Complete Dashboard</title>
+    <meta name="description" content="Comprehensive analytics dashboard with sales metrics, search data, and sales proportion charts" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="dashboard-container">
         <div class="dashboard-wrapper">
+            <!-- Existing 4 Cards Grid -->
             <div class="dashboard-grid">
                 
                 <!-- Card 1: Total Sales -->
@@ -147,7 +149,7 @@
 
             </div>
 
-            <!-- New Dashboard Section -->
+            <!-- New Dashboard Section - Below the 4 cards -->
             <div class="new-dashboard-grid">
                 <!-- Online Top Search -->
                 <div class="dashboard-card">
@@ -169,7 +171,7 @@
                                     </div>
                                 </div>
                                 <div class="metric-chart">
-                                    <svg class="mini-chart" width="80" height="30">
+                                    <svg class="mini-chart" width="80" height="32" viewBox="0 0 80 30">
                                         <polyline class="chart-line" points="0,20 11,15 23,18 34,12 46,8 57,14 69,10 80,6"></polyline>
                                     </svg>
                                 </div>
@@ -190,7 +192,7 @@
                                     </div>
                                 </div>
                                 <div class="metric-chart">
-                                    <svg class="mini-chart" width="80" height="30">
+                                    <svg class="mini-chart" width="80" height="32" viewBox="0 0 80 30">
                                         <polyline class="chart-line" points="0,10 11,18 23,14 34,22 46,20 57,16 69,24 80,12"></polyline>
                                     </svg>
                                 </div>
@@ -209,8 +211,77 @@
                                     <th>Weekly Range</th>
                                 </tr>
                             </thead>
-                            <tbody id="search-table-body">
-                                <!-- Populated by JavaScript -->
+                            <tbody>
+                                <tr>
+                                    <td class="rank-cell">1</td>
+                                    <td>search-keyword-0</td>
+                                    <td>9</td>
+                                    <td>
+                                        <div class="trend-cell down">
+                                            <span>64%</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="22,17 13.5,8.5 8.5,13.5 2,7"></polyline>
+                                                <polyline points="16,17 22,17 22,11"></polyline>
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-cell">2</td>
+                                    <td>search-keyword-1</td>
+                                    <td>268</td>
+                                    <td>
+                                        <div class="trend-cell up">
+                                            <span>99%</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="22,7 13.5,15.5 8.5,10.5 2,17"></polyline>
+                                                <polyline points="16,7 22,7 22,13"></polyline>
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-cell">3</td>
+                                    <td>search-keyword-2</td>
+                                    <td>526</td>
+                                    <td>
+                                        <div class="trend-cell up">
+                                            <span>63%</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="22,7 13.5,15.5 8.5,10.5 2,17"></polyline>
+                                                <polyline points="16,7 22,7 22,13"></polyline>
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-cell">4</td>
+                                    <td>search-keyword-3</td>
+                                    <td>21</td>
+                                    <td>
+                                        <div class="trend-cell down">
+                                            <span>76%</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="22,17 13.5,8.5 8.5,13.5 2,7"></polyline>
+                                                <polyline points="16,17 22,17 22,11"></polyline>
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-cell">5</td>
+                                    <td>search-keyword-4</td>
+                                    <td>83</td>
+                                    <td>
+                                        <div class="trend-cell up">
+                                            <span>27%</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="22,7 13.5,15.5 8.5,10.5 2,17"></polyline>
+                                                <polyline points="16,7 22,7 22,13"></polyline>
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -218,16 +289,17 @@
                     <!-- Pagination -->
                     <div class="pagination-container">
                         <div class="pagination-info">
-                            <span id="pagination-info">1 - 5 of 10</span>
+                            <span>1 - 5 of 10</span>
                         </div>
                         <div class="pagination-controls">
-                            <button class="pagination-btn" id="prev-btn" onclick="changePage(-1)">
+                            <button class="pagination-btn">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="15,18 9,12 15,6"></polyline>
                                 </svg>
                             </button>
-                            <div id="page-buttons"></div>
-                            <button class="pagination-btn" id="next-btn" onclick="changePage(1)">
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9,18 15,12 9,6"></polyline>
                                 </svg>
@@ -243,9 +315,9 @@
                         
                         <!-- Tabs -->
                         <div class="tabs">
-                            <button class="tab-btn active" data-tab="ALL" onclick="switchTab('ALL')">ALL</button>
-                            <button class="tab-btn" data-tab="Online" onclick="switchTab('Online')">Online</button>
-                            <button class="tab-btn" data-tab="Stores" onclick="switchTab('Stores')">Stores</button>
+                            <button class="tab-btn active">ALL</button>
+                            <button class="tab-btn">Online</button>
+                            <button class="tab-btn">Stores</button>
                         </div>
                     </div>
 
@@ -253,11 +325,42 @@
                         <!-- Donut Chart -->
                         <div class="chart-section">
                             <div class="donut-chart-container">
-                                <svg class="donut-chart" width="200" height="200" id="donut-chart">
-                                    <!-- Populated by JavaScript -->
+                                <svg class="donut-chart" width="200" height="200">
+                                    <!-- Background circle -->
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#f3f4f6" stroke-width="30"/>
+                                    
+                                    <!-- Home Appliances: 21.24% -->
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#3b82f6" stroke-width="30" 
+                                            stroke-dasharray="113.4 534.1" stroke-dashoffset="0" stroke-linecap="round" 
+                                            transform="rotate(-90 100 100)"/>
+                                    
+                                    <!-- Beverages: 27.94% -->
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#10b981" stroke-width="30" 
+                                            stroke-dasharray="149.2 534.1" stroke-dashoffset="-113.4" stroke-linecap="round" 
+                                            transform="rotate(-90 100 100)"/>
+                                    
+                                    <!-- Personal Health: 27.07% -->
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#8b5cf6" stroke-width="30" 
+                                            stroke-dasharray="144.6 534.1" stroke-dashoffset="-262.6" stroke-linecap="round" 
+                                            transform="rotate(-90 100 100)"/>
+                                    
+                                    <!-- Accessories & Bags: 3.57% -->
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#f59e0b" stroke-width="30" 
+                                            stroke-dasharray="19.1 534.1" stroke-dashoffset="-407.2" stroke-linecap="round" 
+                                            transform="rotate(-90 100 100)"/>
+                                    
+                                    <!-- Mother & Baby Products: 10.53% -->
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#ef4444" stroke-width="30" 
+                                            stroke-dasharray="56.2 534.1" stroke-dashoffset="-426.3" stroke-linecap="round" 
+                                            transform="rotate(-90 100 100)"/>
+                                    
+                                    <!-- Others: 9.66% -->
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="#06b6d4" stroke-width="30" 
+                                            stroke-dasharray="51.6 534.1" stroke-dashoffset="-482.5" stroke-linecap="round" 
+                                            transform="rotate(-90 100 100)"/>
                                 </svg>
                                 <div class="chart-center">
-                                    <div class="chart-total" id="chart-total">1149</div>
+                                    <div class="chart-total">1149</div>
                                     <div class="chart-label">Total</div>
                                 </div>
                             </div>
@@ -266,8 +369,72 @@
                         <!-- Legend -->
                         <div class="legend-section">
                             <h3 class="legend-title">Sales</h3>
-                            <div class="legend" id="sales-legend">
-                                <!-- Populated by JavaScript -->
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-category">
+                                        <div class="legend-color" style="background-color: #3b82f6;"></div>
+                                        <span class="legend-name">Home Appliances</span>
+                                    </div>
+                                    <div class="legend-values">
+                                        <span class="legend-percentage">21.24%</span>
+                                        <span class="legend-value">¥244.00</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="legend-item">
+                                    <div class="legend-category">
+                                        <div class="legend-color" style="background-color: #10b981;"></div>
+                                        <span class="legend-name">Beverages</span>
+                                    </div>
+                                    <div class="legend-values">
+                                        <span class="legend-percentage">27.94%</span>
+                                        <span class="legend-value">¥321.00</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="legend-item">
+                                    <div class="legend-category">
+                                        <div class="legend-color" style="background-color: #8b5cf6;"></div>
+                                        <span class="legend-name">Personal Health</span>
+                                    </div>
+                                    <div class="legend-values">
+                                        <span class="legend-percentage">27.07%</span>
+                                        <span class="legend-value">¥311.00</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="legend-item">
+                                    <div class="legend-category">
+                                        <div class="legend-color" style="background-color: #f59e0b;"></div>
+                                        <span class="legend-name">Accessories & Bags</span>
+                                    </div>
+                                    <div class="legend-values">
+                                        <span class="legend-percentage">3.57%</span>
+                                        <span class="legend-value">¥41.00</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="legend-item">
+                                    <div class="legend-category">
+                                        <div class="legend-color" style="background-color: #ef4444;"></div>
+                                        <span class="legend-name">Mother & Baby Products</span>
+                                    </div>
+                                    <div class="legend-values">
+                                        <span class="legend-percentage">10.53%</span>
+                                        <span class="legend-value">¥121.00</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="legend-item">
+                                    <div class="legend-category">
+                                        <div class="legend-color" style="background-color: #06b6d4;"></div>
+                                        <span class="legend-name">Others</span>
+                                    </div>
+                                    <div class="legend-values">
+                                        <span class="legend-percentage">9.66%</span>
+                                        <span class="legend-value">¥111.00</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -275,7 +442,5 @@
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
