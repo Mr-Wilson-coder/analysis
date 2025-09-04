@@ -146,7 +146,136 @@
                 </div>
 
             </div>
+
+            <!-- New Dashboard Section -->
+            <div class="new-dashboard-grid">
+                <!-- Online Top Search -->
+                <div class="dashboard-card">
+                    <h2 class="dashboard-card-title">Online Top Search</h2>
+                    
+                    <!-- Metrics -->
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-label">Search Users</div>
+                            <div class="metric-content">
+                                <div class="metric-info">
+                                    <div class="metric-value">12,321</div>
+                                    <div class="metric-change positive">
+                                        <svg class="trend-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="22,7 13.5,15.5 8.5,10.5 2,17"></polyline>
+                                            <polyline points="16,7 22,7 22,13"></polyline>
+                                        </svg>
+                                        <span>17.1%</span>
+                                    </div>
+                                </div>
+                                <div class="metric-chart">
+                                    <svg class="mini-chart" width="80" height="30">
+                                        <polyline class="chart-line" points="0,20 11,15 23,18 34,12 46,8 57,14 69,10 80,6"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="metric">
+                            <div class="metric-label">Per Capita Search</div>
+                            <div class="metric-content">
+                                <div class="metric-info">
+                                    <div class="metric-value">2.7</div>
+                                    <div class="metric-change negative">
+                                        <svg class="trend-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="22,17 13.5,8.5 8.5,13.5 2,7"></polyline>
+                                            <polyline points="16,17 22,17 22,11"></polyline>
+                                        </svg>
+                                        <span>26.2%</span>
+                                    </div>
+                                </div>
+                                <div class="metric-chart">
+                                    <svg class="mini-chart" width="80" height="30">
+                                        <polyline class="chart-line" points="0,10 11,18 23,14 34,22 46,20 57,16 69,24 80,12"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="table-container">
+                        <table class="search-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Keyword</th>
+                                    <th>Users</th>
+                                    <th>Weekly Range</th>
+                                </tr>
+                            </thead>
+                            <tbody id="search-table-body">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination-info">
+                            <span id="pagination-info">1 - 5 of 10</span>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="prev-btn" onclick="changePage(-1)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15,18 9,12 15,6"></polyline>
+                                </svg>
+                            </button>
+                            <div id="page-buttons"></div>
+                            <button class="pagination-btn" id="next-btn" onclick="changePage(1)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9,18 15,12 9,6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Proportion Chart -->
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <h2 class="dashboard-card-title">The Proportion Of Sales</h2>
+                        
+                        <!-- Tabs -->
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="ALL" onclick="switchTab('ALL')">ALL</button>
+                            <button class="tab-btn" data-tab="Online" onclick="switchTab('Online')">Online</button>
+                            <button class="tab-btn" data-tab="Stores" onclick="switchTab('Stores')">Stores</button>
+                        </div>
+                    </div>
+
+                    <div class="chart-content">
+                        <!-- Donut Chart -->
+                        <div class="chart-section">
+                            <div class="donut-chart-container">
+                                <svg class="donut-chart" width="200" height="200" id="donut-chart">
+                                    <!-- Populated by JavaScript -->
+                                </svg>
+                                <div class="chart-center">
+                                    <div class="chart-total" id="chart-total">1149</div>
+                                    <div class="chart-label">Total</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Legend -->
+                        <div class="legend-section">
+                            <h3 class="legend-title">Sales</h3>
+                            <div class="legend" id="sales-legend">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
