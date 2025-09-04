@@ -25,7 +25,7 @@ body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
-    margin-bottom: 40px; /* Add margin below the cards */
+    margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
@@ -41,15 +41,20 @@ body {
 }
 
 .card {
-    background: white; 
-    border: 1px solid #e5e5e5;
+    background: #fff; 
+    border: none; 
     border-radius: 8px;
     padding: 24px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0; 
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .card-header {
@@ -68,13 +73,14 @@ body {
 .info-icon {
     width: 16px;
     height: 16px;
-    border: 1px solid #999;
+    border: none; 
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 10px;
     color: #999;
+    background: #f3f4f6;
 }
 
 .card-value {
@@ -123,7 +129,8 @@ body {
 }
 
 .divider {
-    border-top: 1px solid #e5e5e5;
+    height: 1px;
+    background-color: #f0f0f0;
     margin: 12px 0;
 }
 
@@ -194,8 +201,6 @@ body {
     border-radius: 50%;
 }
 
-
-
 /* Arrow symbols */
 .arrow-up::before {
     content: "↗";
@@ -207,9 +212,7 @@ body {
     font-size: 12px;
 }
 
-
-
-/*Anaysis Dashboard Styles*/
+/* Analysis Dashboard Styles */
 .new-dashboard-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -223,13 +226,17 @@ body {
     }
 }
 
-/* Dashboard card styles */
 .dashboard-card {
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
+    box-shadow: none; 
+    border: none; 
     padding: 24px;
+    transition: box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .dashboard-card-title {
@@ -246,7 +253,7 @@ body {
     margin-bottom: 24px;
 }
 
-/* Metrics styles */
+/* Metrics */
 .metrics-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -327,7 +334,7 @@ body {
     opacity: 0.8;
 }
 
-/* Table styles */
+/* Table */
 .table-container {
     overflow-x: auto;
     margin-bottom: 24px;
@@ -344,14 +351,14 @@ body {
     font-size: 14px;
     font-weight: 500;
     color: #6b7280;
-    border-bottom: 1px solid #e5e7eb;
+    border: none; 
 }
 
 .search-table td {
     padding: 12px 8px;
     font-size: 14px;
     color: #1a1a1a;
-    border-bottom: 1px solid #e5e7eb;
+    border: none; 
 }
 
 .search-table tr:hover {
@@ -376,7 +383,7 @@ body {
     color: #dc2626;
 }
 
-/* Pagination styles */
+/* Pagination */
 .pagination-container {
     display: flex;
     justify-content: space-between;
@@ -400,13 +407,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #e5e7eb;
     background: #ffffff;
     color: #6b7280;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s;
     font-size: 14px;
+    border: none; 
 }
 
 .pagination-btn:hover:not(:disabled) {
@@ -421,10 +428,9 @@ body {
 .pagination-btn.active {
     background: #3b82f6;
     color: #ffffff;
-    border-color: #3b82f6;
 }
 
-/* Tabs styles */
+/* Tabs */
 .tabs {
     display: flex;
     align-items: center;
@@ -438,7 +444,7 @@ body {
     height: 32px;
     padding: 0 12px;
     font-size: 12px;
-    border: none;
+    border: none; 
     background: transparent;
     color: #6b7280;
     border-radius: 4px;
@@ -451,7 +457,7 @@ body {
     color: #ffffff;
 }
 
-/* Chart styles */
+/* Charts */
 .chart-content {
     display: grid;
     grid-template-columns: 1fr;
@@ -555,7 +561,7 @@ body {
     color: #1a1a1a;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 767px) {
     .dashboard-container {
         padding: 12px;
@@ -590,23 +596,7 @@ body {
     }
 }
 
-/* Additional hover effects and transitions */
-.dashboard-card {
-    transition: box-shadow 0.2s ease;
-}
-
-.dashboard-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.card {
-    transition: box-shadow 0.2s ease;
-}
-
-.card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Hover effects */
 .metric-change svg {
     transition: transform 0.2s ease;
 }
