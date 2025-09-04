@@ -1,4 +1,3 @@
-/* Original CSS Styles - Keep as provided */
 * {
     margin: 0;
     padding: 0;
@@ -195,12 +194,7 @@ body {
     border-radius: 50%;
 }
 
-.settings-icon {
-    width: 16px;
-    height: 16px;
-    color: #999;
-    margin-left: 8px;
-}
+
 
 /* Arrow symbols */
 .arrow-up::before {
@@ -213,13 +207,9 @@ body {
     font-size: 12px;
 }
 
-/* Settings icon */
-.settings::before {
-    content: "⚙";
-    font-size: 14px;
-}
 
-/* NEW DASHBOARD STYLES - For the sections below the cards */
+
+/*Anaysis Dashboard Styles*/
 .new-dashboard-grid {
     display: grid;
     grid-template-columns: 1fr;
