@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Admin Dashboard - Analytics & Sales Management</title>
+    <meta name="description" content="Comprehensive admin dashboard for sales analytics, conversion tracking, and business intelligence">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="dashboard-container">
-        <div class="dashboard-wrapper">
-            <div class="dashboard-grid">  
+<div class="dashboard-container1">
+        <div class="dashboard-wrapper1">
+            <div class="dashboard-grid1">  
 
 
                 <!-- Card 1: Total Sales -->
@@ -40,6 +42,7 @@
                         Day Sales <span class="value">¥ 12,423</span>
                     </div>
                 </div>
+                <!--./Card 1: Total Sales-->
 
 
 
@@ -75,6 +78,7 @@
                         Day Visits <span class="value">1,234</span>
                     </div>
                 </div>
+                <!--./Card 2: Visits-->
 
 
 
@@ -113,6 +117,7 @@
                         Conversion Rate <span class="value">60%</span>
                     </div>
                 </div>
+                <!--./Card 3: Payments-->
 
 
 
@@ -153,6 +158,7 @@
                 </div>
 
             </div>
+            <!--./Card 4: Operational Effect-->
 
 
 
@@ -207,6 +213,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--./Metrics -->
 
 
                     <!-- Table -->
@@ -294,6 +301,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <!--./Table-->
 
 
                     <!-- Pagination -->
@@ -317,6 +325,7 @@
                         </div>
                     </div>
                 </div>
+            
 
 
                 <!-- Sales Proportion Chart -->
@@ -376,6 +385,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--./pagination-->
 
 
                         <!-- Legend -->
@@ -454,5 +464,342 @@
             </div>
         </div>
     </div>
+
+    <div class="dashboard-container">
+        <div class="dashboard-wrapper">
+            <!-- Header -->
+            <div class="header-section">
+                <h1 class="dashboard-title">Analytics Dashboard</h1>
+                
+                <!-- Top Controls -->
+                <div class="controls-section">
+                    <div class="tabs-container">
+                        <div class="tabs-list">
+                            <button class="tab-button active" data-tab="sales">Sales</button>
+                            <button class="tab-button" data-tab="visits">Visits</button>
+                        </div>
+                    </div>
+
+                    <div class="time-controls">
+                        <div class="time-periods">
+                            <button class="time-button active" data-period="day">All Day</button>
+                            <button class="time-button" data-period="week">All Week</button>
+                            <button class="time-button" data-period="month">All Month</button>
+                            <button class="time-button" data-period="year">All Year</button>
+                        </div>
+                        
+                        <div class="date-controls">
+                            <button class="date-button">
+                                <span class="calendar-icon">📅</span>
+                                <span>Start date</span>
+                            </button>
+                            <button class="date-button">
+                                <span class="calendar-icon">📅</span>
+                                <span>End date</span>
+                            </button>
+                            <button class="date-button">
+                                <span class="calendar-icon">🗓️</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="content-section">
+                <!-- Sales Tab Content -->
+                <div class="tab-content active" id="sales-content">
+                    <div class="main-chart-section">
+                        <!-- Sales Chart -->
+                        <div class="chart-card main-chart">
+                            <div class="card-header">
+                                <h3 class="card-title">Stores Sales Trend</h3>
+                            </div>
+                            <div class="card-content">
+                                <canvas id="salesChart" width="800" height="400"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Sales Ranking -->
+                        <div class="chart-card ranking-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Sales Ranking</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="ranking-list">
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge rank-1">1</div>
+                                            <span class="store-name">Guangzhou No.0 shop</span>
+                                        </div>
+                                        <span class="store-value">323,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge rank-2">2</div>
+                                            <span class="store-name">Guangzhou No.1 shop</span>
+                                        </div>
+                                        <span class="store-value">323,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge rank-3">3</div>
+                                            <span class="store-name">Guangzhou No.2 shop</span>
+                                        </div>
+                                        <span class="store-value">323,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">4</div>
+                                            <span class="store-name">Guangzhou No.3 shop</span>
+                                        </div>
+                                        <span class="store-value">323,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">5</div>
+                                            <span class="store-name">Guangzhou No.4 shop</span>
+                                        </div>
+                                        <span class="store-value">323,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">6</div>
+                                            <span class="store-name">Guangzhou No.5 shop</span>
+                                        </div>
+                                        <span class="store-value">323,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">7</div>
+                                            <span class="store-name">Guangzhou No.6 shop</span>
+                                        </div>
+                                        <span class="store-value">323,234</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conversion Rates -->
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Conversion Rates by Store</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="conversion-grid">
+                                <div class="conversion-item">
+                                    <div class="circular-progress" data-percentage="70">
+                                        <svg class="progress-ring" width="96" height="96">
+                                            <circle class="progress-ring-bg" cx="48" cy="48" r="40"></circle>
+                                            <circle class="progress-ring-fill" cx="48" cy="48" r="40"></circle>
+                                        </svg>
+                                        <div class="progress-text">
+                                            <div class="store-id">Store 4</div>
+                                            <div class="percentage">70%</div>
+                                        </div>
+                                    </div>
+                                    <p class="conversion-label">Conversion Rate</p>
+                                </div>
+                                <div class="conversion-item">
+                                    <div class="circular-progress" data-percentage="90">
+                                        <svg class="progress-ring" width="96" height="96">
+                                            <circle class="progress-ring-bg" cx="48" cy="48" r="40"></circle>
+                                            <circle class="progress-ring-fill" cx="48" cy="48" r="40"></circle>
+                                        </svg>
+                                        <div class="progress-text">
+                                            <div class="store-id">Store 5</div>
+                                            <div class="percentage">90%</div>
+                                        </div>
+                                    </div>
+                                    <p class="conversion-label">Conversion Rate</p>
+                                </div>
+                                <div class="conversion-item">
+                                    <div class="circular-progress" data-percentage="10">
+                                        <svg class="progress-ring" width="96" height="96">
+                                            <circle class="progress-ring-bg" cx="48" cy="48" r="40"></circle>
+                                            <circle class="progress-ring-fill" cx="48" cy="48" r="40"></circle>
+                                        </svg>
+                                        <div class="progress-text">
+                                            <div class="store-id">Store 6</div>
+                                            <div class="percentage">10%</div>
+                                        </div>
+                                    </div>
+                                    <p class="conversion-label">Conversion Rate</p>
+                                </div>
+                                <div class="conversion-item">
+                                    <div class="circular-progress" data-percentage="90">
+                                        <svg class="progress-ring" width="96" height="96">
+                                            <circle class="progress-ring-bg" cx="48" cy="48" r="40"></circle>
+                                            <circle class="progress-ring-fill" cx="48" cy="48" r="40"></circle>
+                                        </svg>
+                                        <div class="progress-text">
+                                            <div class="store-id">Store 7</div>
+                                            <div class="percentage">90%</div>
+                                        </div>
+                                    </div>
+                                    <p class="conversion-label">Conversion Rate</p>
+                                </div>
+                                <div class="conversion-item">
+                                    <div class="circular-progress" data-percentage="30">
+                                        <svg class="progress-ring" width="96" height="96">
+                                            <circle class="progress-ring-bg" cx="48" cy="48" r="40"></circle>
+                                            <circle class="progress-ring-fill" cx="48" cy="48" r="40"></circle>
+                                        </svg>
+                                        <div class="progress-text">
+                                            <div class="store-id">Store 8</div>
+                                            <div class="percentage">30%</div>
+                                        </div>
+                                    </div>
+                                    <p class="conversion-label">Conversion Rate</p>
+                                </div>
+                                <div class="conversion-item">
+                                    <div class="circular-progress" data-percentage="80">
+                                        <svg class="progress-ring" width="96" height="96">
+                                            <circle class="progress-ring-bg" cx="48" cy="48" r="40"></circle>
+                                            <circle class="progress-ring-fill" cx="48" cy="48" r="40"></circle>
+                                        </svg>
+                                        <div class="progress-text">
+                                            <div class="store-id">Store 9</div>
+                                            <div class="percentage">80%</div>
+                                        </div>
+                                    </div>
+                                    <p class="conversion-label">Conversion Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Traffic & Payments Chart -->
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Traffic & Payments Analysis</h3>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-color traffic-color"></div>
+                                    <span>Traffic</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color payments-color"></div>
+                                    <span>Payments</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <canvas id="trafficChart" width="800" height="320"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visits Tab Content -->
+                <div class="tab-content" id="visits-content">
+                    <div class="main-chart-section">
+                        <!-- Visits Chart -->
+                        <div class="chart-card main-chart">
+                            <div class="card-header">
+                                <h3 class="card-title">Stores Visits Trend</h3>
+                            </div>
+                            <div class="card-content">
+                                <canvas id="visitsChart" width="800" height="400"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Visits Ranking -->
+                        <div class="chart-card ranking-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Visits Ranking</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="ranking-list">
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge rank-1">1</div>
+                                            <span class="store-name">Guangzhou No.0 shop</span>
+                                        </div>
+                                        <span class="store-value">15,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge rank-2">2</div>
+                                            <span class="store-name">Guangzhou No.1 shop</span>
+                                        </div>
+                                        <span class="store-value">14,123</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge rank-3">3</div>
+                                            <span class="store-name">Guangzhou No.2 shop</span>
+                                        </div>
+                                        <span class="store-value">13,456</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">4</div>
+                                            <span class="store-name">Guangzhou No.3 shop</span>
+                                        </div>
+                                        <span class="store-value">12,789</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">5</div>
+                                            <span class="store-name">Guangzhou No.4 shop</span>
+                                        </div>
+                                        <span class="store-value">11,234</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">6</div>
+                                            <span class="store-name">Guangzhou No.5 shop</span>
+                                        </div>
+                                        <span class="store-value">10,567</span>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-info">
+                                            <div class="rank-badge">7</div>
+                                            <span class="store-name">Guangzhou No.6 shop</span>
+                                        </div>
+                                        <span class="store-value">9,876</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Same conversion rates and traffic charts as sales tab -->
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Conversion Rates by Store</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="conversion-grid">
+                                <!-- Same conversion rate circles as above -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Traffic & Payments Analysis</h3>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-color traffic-color"></div>
+                                    <span>Traffic</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color payments-color"></div>
+                                    <span>Payments</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <canvas id="trafficChart2" width="800" height="320"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
